@@ -1,0 +1,71 @@
+<script>
+const books = ['IPA', 'IPS', 'BIO','KIMIA','FISIKA']
+
+
+function showBooks(books)
+{
+alert(`Daftar Buku \n
+${books.join('\n')}
+`)
+}
+
+function addBooks(books){
+    let book = prompt('please input the new book')
+    books.push(book)
+}
+function deleteBooks(books){
+    let book = prompt('please input the book you want to delete')
+    if(!books.includes(book) )
+{
+    if(book != null)
+    {
+        alert(book  + ' tidak ditemukan')
+    }
+}
+else
+{
+
+    books.splice(books.indexOf(book),1)
+}
+}
+
+function editBooks(books){
+    let book= prompt('please select the book you want to edit')
+   let indexBook =  books.indexOf(book)
+    book = prompt('please input the new book')
+
+   books[indexBook] = book
+}
+
+
+let pilihan = 0
+do
+{
+   pilihan  = prompt(`
+         1. Show Books
+         2. Add Books
+         3. Delete Books
+         4. Edit Books 
+         5. Exit`)
+if (pilihan == 1)
+{
+showBooks(books)
+}
+else if (pilihan == 2)
+{
+    addBooks(books)
+}
+else if (pilihan == 3)
+{
+deleteBooks(books)
+}
+else if (pilihan == 4)
+{
+editBooks(books)
+}
+
+}
+while(pilihan != 5)
+
+
+</script>
